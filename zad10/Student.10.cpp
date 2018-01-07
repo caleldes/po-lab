@@ -4,7 +4,7 @@ Student::Student() {
 
 }
 
-Student::Student(string imie, string nazwisko, string kierunek, int rok, double ocena) {
+Student::Student(string imie, string nazwisko, string kierunek, int rok, Ocena ocena) {
     this->imie=imie;
     this->nazwisko=nazwisko;
     this->kierunek=kierunek;
