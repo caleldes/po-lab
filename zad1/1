@@ -1,0 +1,34 @@
+void mainZad1(){
+    Film a = {"Ala", "Kota"};
+//    Film* tab = new Film[3];
+//    delete tab;
+    Film films[3];
+    films[0].Uzupelnij("a","a");
+    films[1].Uzupelnij("b","a");
+    films[2].Uzupelnij("c","a");
+
+//    Wypisz(a);
+//    Uzupelnij(a,"Bla","Kota");
+//    Wypisz(a);
+//    a.Wypisz();
+//    a.Uzupelnij("Bla","Kota");
+//    a.Wypisz();
+    Klient A;
+    Klient B;
+    A.Uzupelnij("Kicia", "Mrusia");
+    B.Uzupelnij("Misio", "Mrusio");
+    A.Wypisz();
+    B.Wypisz();
+    A.Przypisz(a);
+    A.Wypisz();
+    B.Przypisz(films,3);
+    B.Wypisz();
+    Klient klients[5];
+    for(int i=0; i<5; i++)
+    {
+        klients[i].Uzupelnij("dajGlos", "a");
+        klients[i].Przypisz(films, 3);
+        klients[i].Przypisz(films, 3);
+        klients[i].Wypisz();
+    }
+}
