@@ -21,6 +21,10 @@ int wczytajRok(){
     return rok;
 }
 
+Ocena wczytajOcena(){
+    return Dwa;
+}
+
 void Uzupelnij(Student &a)
 {
     do{
