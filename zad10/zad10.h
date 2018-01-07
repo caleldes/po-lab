@@ -6,17 +6,35 @@
 
 using namespace std;
 
+
+int wczytajRok(){
+    cout << "Podaj Rok: " << endl;
+    int rok;
+    cin >> rok;
+    cin.ignore();
+    if(cin.fail()){
+        throw new Error("blad wczytania liczby");
+    }
+    if(rok<2000){
+        throw new Error("Rok musi byc wiekszt od 2000");
+    }
+    return rok;
+}
+
 void Uzupelnij(Student &a)
 {
-    int rok;
     do{
-        cin >> rok; //>> a.nazwisko >> a.kierunek >> a.rok >> a.ocena;
-        cin.ignore();
-        a.rok=!cin.fail()? rok : throw new Error("blad");
-        if(rok<2000){
-            throw new Error("blad");
+        try{
+            int rok = wczytajRok();
+            a.rok = rok;
+            break;
         }
-    } while(true);
+        catch(Error* x){
+            cerr << "Error2: " << x->what() << endl;
+            cin.clear();
+            cin.sync();
+        }
+    }while(true);
 }
 
 void mainZad10()
