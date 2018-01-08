@@ -15,8 +15,11 @@ Student::Student(string imie, string nazwisko, string kierunek, int rok, double 
 // Operator wypisania obiektu Int do strumienia std::ostream (std::cout, std::cerr, itp)
 ostream & operator <<( ostream & os, const Student & x )
 {
-    os << "{" << x.imie << ", " << x.nazwisko << ", " << x.kierunek
-       << ", " << x.rok << ", " << x.ocena << "}";
+    os << x.imie << endl;
+    os << x.nazwisko << endl;
+    os << x.kierunek << endl;
+    os << x.rok << endl;
+    os << x.ocena << endl;
     return os;
 }
 // Operator wczytania ze strumienia std::istream (std::cin, itp)
