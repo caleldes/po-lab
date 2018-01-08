@@ -5,6 +5,7 @@
 #include "Student.10.h"
 #include <string>
 #include "Error.h"
+#include <fstream>
 
 using namespace std;
 
@@ -214,10 +215,70 @@ void Uzupelnij(Student &a)
 }
 
 
-void mainZad10()
-{
+void a(){
     Student a;
     Uzupelnij(a);
     cout << a;
+}
+
+void b(){
+    string outputFileName = "test.txt";
+    Student tab[3];
+    for(int i = 0; i < 3; i++) {
+        tab[i].imie = "przykladowe imie";
+        tab[i].nazwisko = "przykladowe nazwisko";
+        tab[i].ocena = 2 + i;
+        tab[i].rok = 2020;
+        tab[i].kierunek = "IO";
+    }
+
+
+
+    std::ofstream writeFile;
+    writeFile.exceptions (ifstream::failbit | ifstream::badbit);
+    try {
+        writeFile.open(outputFileName);
+        for(int i = 0; i < 3; i++){
+            writeFile << tab[i];
+        }
+        writeFile.close();
+
+    }
+    catch (exception const& e) {
+        cerr << "Exception: " << e.what() << endl;
+    }
+}
+
+void c(){
+
+    string inputFileName = "test.txt";
+    ifstream readFile;
+    readFile.exceptions (ifstream::failbit | ifstream::badbit);
+
+    try{
+        readFile.open(inputFileName);
+        char c;
+        while (readFile.get(c))          // loop getting single characters
+            std::cout << c;
+
+        readFile.close();
+    }
+    catch (exception const& e) {
+        cerr << "Exception: " << e.what() << endl;
+    }
+}
+
+
+void mainZad10()
+{
+
+//    a();
+
+    b();
+
+    c();
+
+
+
 }
 #endif //UNTITLED5_ZAD10_H
